@@ -1,0 +1,227 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>playwright</groupId>
+	<artifactId>ckPlaywright</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+
+	</repositories>
+
+	<properties>
+		<playwright-version>1.51.0</playwright-version>
+		<testng-version>7.10.2</testng-version>
+		<extentreports-version>5.1.2</extentreports-version>
+		<apache-commons-io-version>2.4</apache-commons-io-version>
+		<rest-assured-version>3.1.0</rest-assured-version>
+		<json-simple-version>1.1</json-simple-version>
+		<sonar-maven-plugin-version>3.8.0.2131</sonar-maven-plugin-version>
+		<checkerframework.version>3.3.0</checkerframework.version>
+		<taimos.totp.version>1.0</taimos.totp.version>
+		<logback.version>1.5.11</logback.version>
+		<slf4j.version>2.0.16</slf4j.version>
+		<poi.version>4.1.1</poi.version>
+		<browserstack.version>1.0.3</browserstack.version>
+		<jxl.version>2.6.3</jxl.version>
+		<poi.ooxml.version>4.1.1</poi.ooxml.version>
+		<allure-testng.version>2.29.1</allure-testng.version>
+<!--		<PlaywrightFramework-systemPath>
+			${pom.basedir}\Lib\PlaywrightFramework.jar</PlaywrightFramework-systemPath>
+-->
+
+
+		<!--<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>21</maven.compiler.source>
+		<maven.compiler.target>21</maven.compiler.target>
+		-->
+
+		<!--	<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		-->
+	<allure.results.directory>allure-results</allure.results.directory>
+		<allure.report.name>ckALreport</allure.report.name>
+	</properties>
+
+	<dependencies>
+
+			
+<!--			<dependency>
+			<groupId>PlaywrightFramework</groupId>
+			<artifactId>PlaywrightFramework</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${pom.basedir}\Lib\PlaywrightFramework.jar</systemPath>
+				<systemPath>${PlaywrightFramework-systemPath}</systemPath>
+		</dependency>
+-->
+
+<!--
+<dependency>
+	    <groupId>com.github.chk017</groupId>
+	    <artifactId>PlaywrightFramework</artifactId>
+	    <version>v1.0.9</version>
+	</dependency>
+	-->
+<dependency>
+	    <groupId>com.github.chk017</groupId>
+	    <artifactId>PlaywrightFramework</artifactId>
+	    <version>main</version>
+	    <!--<version>Diyar</version>-->
+	</dependency>
+
+		<dependency>
+			<groupId>com.microsoft.playwright</groupId>
+			<artifactId>playwright</artifactId>
+			<!--<version>1.49.0</version>-->
+			<!--<version>1.51.0</version>-->
+			<version>${playwright-version}</version>
+
+		</dependency>
+
+		<!-- TestNG framework -->
+
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<!-- <version>6.9.10</version> -->
+			<!--<version>7.4.0</version>-->
+			<!--<version>7.11.0</version>-->
+			<version>${testng-version}</version>
+			<!-- <scope>compile</scope> -->
+		</dependency>
+
+<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<!--<version>2.29.1</version>-->
+			<version>${allure-testng.version}</version>
+		</dependency>
+		
+		
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<!--<version>2.41.2</version>-->
+			<!--<version>5.1.2</version>-->
+			<version>${extentreports-version}</version>
+		</dependency>
+
+		<!--
+		https://mvnrepository.com/artifact/org.apache.directory.studio/org.apache.commons.io -->
+		<dependency>
+			<groupId>org.apache.directory.studio</groupId>
+			<artifactId>org.apache.commons.io</artifactId>
+			<!--<version>2.4</version>-->
+			<version>${apache-commons-io-version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<!--<version>3.1.0</version>-->
+			<version>${rest-assured-version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!--
+		https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<!--<version>1.1</version>-->
+			<version>${json-simple-version}</version>
+		</dependency>
+
+		<!--
+		https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin -->
+		<dependency>
+			<groupId>org.sonarsource.scanner.maven</groupId>
+			<artifactId>sonar-maven-plugin</artifactId>
+			<!--<version>3.8.0.2131</version>-->
+			<version>${sonar-maven-plugin-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.checkerframework</groupId>
+			<artifactId>jdk8</artifactId>
+			<version>${checkerframework.version}</version>
+			<!--<version>3.3.0</version>-->
+		</dependency>
+
+		<dependency>
+			<groupId>de.taimos</groupId>
+			<artifactId>totp</artifactId>
+			<version>${taimos.totp.version}</version>
+			<!--<version>1.0</version>-->
+		</dependency>
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>${logback.version}</version>
+			<!--<version>1.5.11</version>-->
+		</dependency>
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+			<!--<version>1.5.11</version>-->
+
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<!--<version>2.1.0-alpha1</version>-->
+			<version>${slf4j.version}</version>
+			<!--<version>2.0.16</version>-->
+
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>${poi.version}</version>
+			<!--<version>4.1.1</version>-->
+			<!--<version>5.4.1</version>-->
+		</dependency>
+
+
+		<!-- Browser stack Local -->
+		<dependency>
+			<groupId>com.browserstack</groupId>
+			<artifactId>browserstack-local-java</artifactId>
+			<!--<version>1.0.3</version>-->
+			<version>${browserstack.version}</version>
+		</dependency>
+
+		<!-- Jxl Jar -->
+		<dependency>
+			<groupId>net.sourceforge.jexcelapi</groupId>
+			<artifactId>jxl</artifactId>
+			<version>${jxl.version}</version>
+			<!--<version>2.6.3</version>-->
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${poi.ooxml.version}</version>
+			<!--<version>4.1.1</version>-->
+			<!--<version>5.4.1</version>-->
+		</dependency>
+
+	</dependencies>
+
+</project>
