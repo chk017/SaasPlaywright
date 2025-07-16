@@ -71,7 +71,9 @@
 <dependency>
 	    <groupId>com.github.chk017</groupId>
 	    <artifactId>PlaywrightFramework</artifactId>
-	    <version>main</version>
+	    <!--<version>v1.0.13</version>-->
+	    <version>main-SNAPSHOT</version>
+		<!--<version>main</version>-->
 	    <!--<version>Diyar</version>-->
 	</dependency>
 
